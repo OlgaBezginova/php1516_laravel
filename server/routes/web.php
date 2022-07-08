@@ -4,6 +4,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,18 +27,22 @@ Route::get('/', [MainController::class, 'index']);
 Route::prefix('users')->name('users.')->group(function(){
     Route::get('/', [UserController::class, 'list'])->name('list');
     Route::get('/{id}', [UserController::class, 'view'])->name('user');
-    Route::put('/create', [UserController::class, 'create'])->name('create');
-    Route::post('/{id}', [UserController::class, 'update'])->name('update');
+    Route::get('/add', [UserController::class, 'add'])->name('add');
+    Route::get('/{id}/update', [UserController::class, 'update'])->name('update');
+    Route::put('/', [UserController::class, 'create'])->name('create');
+    Route::post('/{id}', [UserController::class, 'edit'])->name('edit');
     Route::delete('/{id}', [UserController::class, 'delete'])->name('delete');
     Route::get('/{id}/videos', [UserController::class, 'videos'])->name('videos');
 });
 
 Route::prefix('videos')->name('videos.')->group(function(){
-    Route::get('/', [UserController::class, 'list'])->name('list');
-    Route::get('/{id}', [UserController::class, 'view'])->name('video');
-    Route::put('/create', [UserController::class, 'create'])->name('create');
-    Route::post('/{id}', [UserController::class, 'update'])->name('update');
-    Route::delete('/{id}', [UserController::class, 'delete'])->name('delete');
+    Route::get('/', [VideoController::class, 'list'])->name('list');
+    Route::get('/{id}', [VideoController::class, 'view'])->name('video');
+    Route::get('/add', [VideoController::class, 'add'])->name('add');
+    Route::put('/create', [VideoController::class, 'create'])->name('create');
+    Route::post('/{id}', [VideoController::class, 'update'])->name('update');
+    Route::post('/{id}', [VideoController::class, 'edit'])->name('edit');
+    Route::delete('/{id}', [VideoController::class, 'delete'])->name('delete');
 });
 
 
