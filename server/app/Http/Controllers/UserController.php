@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class VideoController extends Controller
+class UserController extends Controller
 {
+
     public function index()
     {
 
@@ -41,5 +42,11 @@ class VideoController extends Controller
     {
 
     }
+
+    public function videos($id)
+    {
+
+    }
+
 
 }

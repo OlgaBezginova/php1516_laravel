@@ -25,7 +25,7 @@ Route::get('/', function () {
 Route::get('/', [MainController::class, 'index']);
 
 Route::prefix('users')->name('users.')->group(function(){
-    Route::get('/', [UserController::class, 'list'])->name('list');
+    Route::get('/', [UserController::class, 'index'])->name('list');
     Route::get('/{id}', [UserController::class, 'view'])->name('user');
     Route::get('/add', [UserController::class, 'add'])->name('add');
     Route::get('/{id}/update', [UserController::class, 'update'])->name('update');
@@ -36,7 +36,7 @@ Route::prefix('users')->name('users.')->group(function(){
 });
 
 Route::prefix('videos')->name('videos.')->group(function(){
-    Route::get('/', [VideoController::class, 'list'])->name('list');
+    Route::get('/', [VideoController::class, 'index'])->name('list');
     Route::get('/{id}', [VideoController::class, 'view'])->name('video');
     Route::get('/add', [VideoController::class, 'add'])->name('add');
     Route::get('/{id}', [VideoController::class, 'update'])->name('update');
