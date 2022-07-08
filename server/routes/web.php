@@ -39,8 +39,8 @@ Route::prefix('videos')->name('videos.')->group(function(){
     Route::get('/', [VideoController::class, 'list'])->name('list');
     Route::get('/{id}', [VideoController::class, 'view'])->name('video');
     Route::get('/add', [VideoController::class, 'add'])->name('add');
+    Route::get('/{id}', [VideoController::class, 'update'])->name('update');
     Route::put('/create', [VideoController::class, 'create'])->name('create');
-    Route::post('/{id}', [VideoController::class, 'update'])->name('update');
     Route::post('/{id}', [VideoController::class, 'edit'])->name('edit');
     Route::delete('/{id}', [VideoController::class, 'delete'])->name('delete');
 });
