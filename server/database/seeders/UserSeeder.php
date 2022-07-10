@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Book;
 use App\Models\User;
+use App\Models\Video;
 use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder
@@ -15,8 +15,8 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->count(3)->has(
-            Book::factory(5)
+        User::factory()->count(5)->has(
+            Video::factory(2)
         )->create();
     }
 }

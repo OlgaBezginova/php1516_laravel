@@ -18,11 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/', [MainController::class, 'index']);
+Route::get('/', [MainController::class, 'index'])->name('home');
 
 Route::prefix('users')->name('users.')->group(function(){
     Route::get('/', [UserController::class, 'index'])->name('list');
@@ -44,3 +40,16 @@ Route::prefix('videos')->name('videos.')->group(function(){
     Route::post('/{id}', [VideoController::class, 'edit'])->name('edit');
     Route::delete('/{id}', [VideoController::class, 'delete'])->name('delete');
 });
+
+/*
+ * Добавить необходимые view,
+ *
+ * вывести главную страницу, Главная страница содержит только меню и заголовок
+ *
+ * списки пользователей,
+ * списки видео,
+ * страница одного пользователя,
+ * страница одного видео.
+
+Страницы должны содержать заголовок и меню для навигации по модулям - ссылка на страницу со списком пользователей, ссылка на страницу со списком видео.
+*/

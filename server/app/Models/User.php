@@ -42,29 +42,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function books()
+    public function videos()
     {
-        return $this->hasMany(Book::class);
+        return $this->hasMany(Video::class);
     }
-
-    public function libraries()
-    {
-        return $this->belongsToMany(Library::class);
-    }
-
-    public function getNameAttribute($value)
-    {
-        return strtoupper($value);
-    }
-
-    public function getInfoAttribute()
-    {
-        return "{$this->name} {$this->email}";
-    }
-
-    public function setNameAttribute($value)
-    {
-        $this->attributes['name'] = ucfirst($value);
-    }
-
 }

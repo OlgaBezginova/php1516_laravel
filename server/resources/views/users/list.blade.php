@@ -1,9 +1,8 @@
-@extends('layout')
-
-@section('title', 'Books')
-
-@section('content')
-    <ul>
-        @each('books.list-item', $books, 'book')
-    </ul>
-@endsection
+<x-layout>
+    <x-slot name="title">
+        Users
+    </x-slot>
+    <x-slot name="h1">
+        Users
+    </x-slot>
+</x-layout>
