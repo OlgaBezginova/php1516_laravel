@@ -5,4 +5,5 @@
     <x-slot name="h1">
         Videos
     </x-slot>
+    @each('videos.list-item', $videos, 'video')
 </x-layout>

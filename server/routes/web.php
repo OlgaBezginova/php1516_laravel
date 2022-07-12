@@ -35,21 +35,8 @@ Route::prefix('videos')->name('videos.')->group(function(){
     Route::get('/', [VideoController::class, 'index'])->name('list');
     Route::get('/{id}', [VideoController::class, 'view'])->name('video');
     Route::get('/add', [VideoController::class, 'add'])->name('add');
-    Route::get('/{id}', [VideoController::class, 'update'])->name('update');
+    Route::get('/{id}/update', [VideoController::class, 'update'])->name('update');
     Route::put('/', [VideoController::class, 'create'])->name('create');
     Route::post('/{id}', [VideoController::class, 'edit'])->name('edit');
     Route::delete('/{id}', [VideoController::class, 'delete'])->name('delete');
 });
-
-/*
- * Добавить необходимые view,
- *
- * вывести главную страницу, Главная страница содержит только меню и заголовок
- *
- * списки пользователей,
- * списки видео,
- * страница одного пользователя,
- * страница одного видео.
-
-Страницы должны содержать заголовок и меню для навигации по модулям - ссылка на страницу со списком пользователей, ссылка на страницу со списком видео.
-*/
