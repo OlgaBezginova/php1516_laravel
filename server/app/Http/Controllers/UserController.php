@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use App\Repositories\UserRepository;
-use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -20,7 +18,9 @@ class UserController extends Controller
             abort(404);
         }
 
-        return view('users.user', ['user' => $user]);
+        $videos = $userRepository->videos($user);
+
+        return view('users.user', ['user' => $user, 'videos' => $videos]);
     }
 
     public function create()

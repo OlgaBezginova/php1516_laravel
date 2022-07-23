@@ -46,4 +46,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Video::class);
     }
+
+    public function getNameAttribute()
+    {
+        return  $this->firstname . ' ' . $this->lastname;
+    }
 }

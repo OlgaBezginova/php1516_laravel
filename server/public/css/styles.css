@@ -467,3 +467,22 @@ body {
 .post-preview > a:hover {
   color: #777777;
 }
+
+iframe {
+    margin-top: 25px;
+    width: 100%;
+}
+
+
+.video-author a{
+    text-decoration: none;
+}
+
+@media screen and (max-width: 480px) {
+    iframe {
+        height: auto;
+    }
+    .intro-header .site-heading h1, .intro-header .page-heading h1 {
+        font-size: 30px;
+    }
+}
