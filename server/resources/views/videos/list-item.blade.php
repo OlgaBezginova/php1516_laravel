@@ -3,7 +3,7 @@
         <h3 class="post-title">
             {{ $video->title }}
         </h3>
-        <p class="post-meta">by {{ $video->user->username }} </p>
+        <p class="post-meta">by {{ $video->username }} </p>
     </a>
 </div>
 <hr>
