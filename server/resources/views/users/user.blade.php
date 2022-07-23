@@ -6,5 +6,5 @@
         {{ $user->name }}
         <span class="subheading">{{ $user->username }}</span>
     </x-slot>
-    @each('users.video-item', $videos, 'video')
+    @each('videos.list-item', $videos, 'video')
 </x-layout>

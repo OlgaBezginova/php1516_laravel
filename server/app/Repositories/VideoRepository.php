@@ -20,4 +20,9 @@ class VideoRepository
     {
         return $this->initialQuery()->find($id);
     }
+
+    public function recent()
+    {
+        return $this->initialQuery()->orderBy('created_at', 'desc')->take(3)->get();
+    }
 }
